@@ -1,0 +1,17 @@
+@startuml
+
+object 投稿 {
+    id [PK]
+    --
+    投稿内容
+}
+
+object タグ {
+    id [PK]
+    --
+    タグ名
+}
+
+投稿 }o--o{ タグ
+
+@enduml

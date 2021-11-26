@@ -1,0 +1,24 @@
+@startuml
+
+object posts {
+    id [PK]
+    --
+    text: varchar
+}
+
+object tags {
+    id [PK]
+    --
+    name: varchar
+}
+
+object tagged_posts {
+    post_id [PK/FK]
+    tag_id [PK/FK]
+    --
+}
+
+posts --o{ tagged_posts
+tags --o{ tagged_posts
+
+@enduml
