@@ -17,3 +17,25 @@ export const add = (numbers) => {
 
 	return result;
 };
+
+export const multiply = (numbers) => {
+	if (numbers.length === 0) {
+		return 0;
+	} else if (numbers.length > 30) {
+		throw new Error("Aruguments are 30 or less.");
+	}
+
+	if (numbers.some((number) => typeof number !== "number")) {
+		throw new Error("Aruguments should be numbers.");
+	}
+
+	const result = numbers.reduce(
+		(multiplier, multiplicand) => multiplier * multiplicand
+	);
+
+	if (result > 1000) {
+		return "big big number";
+	}
+
+	return result;
+};
