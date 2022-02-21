@@ -1,4 +1,4 @@
-import { add, multiply } from "./functions";
+import { add, multiply, subtract } from "./functions";
 
 describe("add関数のテスト", () => {
 	test("[3]を受け取った場合、 3 が返ること", () => {
@@ -83,5 +83,48 @@ describe("multiply関数のテスト", () => {
 
 		const testCase2 = [7, 11, 13];
 		expect(multiply(testCase2)).toBe("big big number");
+	});
+});
+
+describe("subtract関数のテスト", () => {
+	test("[3]を受け取った場合、 3 が返ること", () => {
+		const testCase = [3];
+		expect(subtract(testCase)).toBe(3);
+	});
+
+	test("[10, 3, 3]を受け取った場合、 4 が返ること", () => {
+		const testCase = [10, 3, 3];
+		expect(subtract(testCase)).toBe(4);
+	});
+
+	test("[]を受け取った場合、 0 が返ること", () => {
+		const testCase = [];
+		expect(subtract(testCase)).toBe(0);
+	});
+
+	test("31 個以上の引数を指定した場合、エラーが発生すること", () => {
+		const testCase1 = [29].concat(Array(29).fill(1));
+		expect(subtract(testCase1)).toBe(0);
+
+		const testCase2 = Array(31).fill(1);
+		expect(() => subtract(testCase2)).toThrow();
+	});
+
+	test("数字以外の引数を受け取った場合、エラーが発生すること", () => {
+		const testCase = ["hoge"];
+		expect(() => subtract(testCase)).toThrow();
+	});
+
+	test("数字以外の引数を含む配列を受け取った場合、エラーが発生すること", () => {
+		const testCase = [10, "hoge", 10];
+		expect(() => subtract(testCase)).toThrow();
+	});
+
+	test("計算結果が負である場合、合計ではなく「negative number」と文字列が返ること", () => {
+		const testCase1 = [10, 10];
+		expect(subtract(testCase1)).toBe(0);
+
+		const testCase2 = [10, 11];
+		expect(subtract(testCase2)).toBe("negative number");
 	});
 });
