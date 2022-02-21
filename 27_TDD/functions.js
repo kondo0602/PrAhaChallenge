@@ -1,13 +1,25 @@
-export const add = (numbers) => {
+const argsEmptyCheck = (numbers) => {
 	if (numbers.length === 0) {
 		return 0;
-	} else if (numbers.length > 30) {
+	}
+};
+
+const argsLengthCheck = (numbers) => {
+	if (numbers.length > 30) {
 		throw new Error("Aruguments are 30 or less.");
 	}
+};
 
+const argsTypeCheck = (numbers) => {
 	if (numbers.some((number) => typeof number !== "number")) {
 		throw new Error("Aruguments should be numbers.");
 	}
+};
+
+export const add = (numbers) => {
+	if (argsEmptyCheck(numbers) === 0) return 0;
+	argsLengthCheck(numbers);
+	argsTypeCheck(numbers);
 
 	const result = numbers.reduce((augend, addend) => augend + addend);
 
@@ -19,15 +31,9 @@ export const add = (numbers) => {
 };
 
 export const multiply = (numbers) => {
-	if (numbers.length === 0) {
-		return 0;
-	} else if (numbers.length > 30) {
-		throw new Error("Aruguments are 30 or less.");
-	}
-
-	if (numbers.some((number) => typeof number !== "number")) {
-		throw new Error("Aruguments should be numbers.");
-	}
+	if (argsEmptyCheck(numbers) === 0) return 0;
+	argsLengthCheck(numbers);
+	argsTypeCheck(numbers);
 
 	const result = numbers.reduce(
 		(multiplier, multiplicand) => multiplier * multiplicand
@@ -41,15 +47,9 @@ export const multiply = (numbers) => {
 };
 
 export const subtract = (numbers) => {
-	if (numbers.length === 0) {
-		return 0;
-	} else if (numbers.length > 30) {
-		throw new Error("Aruguments are 30 or less.");
-	}
-
-	if (numbers.some((number) => typeof number !== "number")) {
-		throw new Error("Aruguments should be numbers.");
-	}
+	if (argsEmptyCheck(numbers) === 0) return 0;
+	argsLengthCheck(numbers);
+	argsTypeCheck(numbers);
 
 	const result = numbers.reduce((minuend, subtrahend) => minuend - subtrahend);
 
@@ -61,15 +61,9 @@ export const subtract = (numbers) => {
 };
 
 export const divide = (numbers) => {
-	if (numbers.length === 0) {
-		return 0;
-	} else if (numbers.length > 30) {
-		throw new Error("Aruguments are 30 or less.");
-	}
-
-	if (numbers.some((number) => typeof number !== "number")) {
-		throw new Error("Aruguments should be numbers.");
-	}
+	if (argsEmptyCheck(numbers) === 0) return 0;
+	argsLengthCheck(numbers);
+	argsTypeCheck(numbers);
 
 	const result = numbers.reduce((dividend, devisor) => dividend / devisor);
 
