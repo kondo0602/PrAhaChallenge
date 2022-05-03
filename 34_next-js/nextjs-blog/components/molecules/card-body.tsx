@@ -1,18 +1,21 @@
-import React, { FC } from "react";
-import Title from "../atoms/title"
-import Content from "../atoms/content"
+import React, { FC } from 'react';
+import Title from '../atoms/title';
+import Content from '../atoms/content';
 
 const style: React.CSSProperties = {
-  marginTop: '0.5rem'
-}
+  marginTop: '0.5rem',
+};
 
-const CardBody: FC<{ titleText: string, contentText: string }> = ({titleText, contentText}) => {
+const CardBody: FC<{ titleText: string; contentText: string }> = ({
+  titleText,
+  contentText,
+}) => {
   return (
-  <div style={style}>
+    <div style={style}>
       <Title text={titleText} />
       <Content text={contentText} />
-  </div>
-  )
+    </div>
+  );
 };
 
 export default CardBody;

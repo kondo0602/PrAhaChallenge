@@ -1,14 +1,12 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 const style: React.CSSProperties = {
   marginTop: '0.5rem',
-  color: 'rgba(75, 85, 99)'
-}
+  color: 'rgba(75, 85, 99)',
+};
 
 const Content: FC<{ text: string }> = ({ text }) => {
-  return (
-  <p style={style}>{text}</p>
-  )
+  return <p style={style}>{text}</p>;
 };
 
 export default Content;

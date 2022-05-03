@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
 const style: React.CSSProperties = {
   objectFit: 'cover',
@@ -6,13 +6,11 @@ const style: React.CSSProperties = {
   height: '2.5rem',
   margin: '1rem',
   borderRadius: '9999px',
-  display: 'block'
-}
+  display: 'block',
+};
 
 const UserIcon: FC<{ imgPath: string }> = ({ imgPath }) => {
-  return (
-  <img src="/images/sample1.png" alt="avatar" style={style}/>
-  )
+  return <img src="/images/sample1.png" alt="avatar" style={style} />;
 };
 
 export default UserIcon;
