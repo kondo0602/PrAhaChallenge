@@ -1,6 +1,6 @@
-import CardHeader from '../components/molecules/card-header';
-import CardBody from '../components/molecules/card-body';
-import CardFooter from '../components/molecules/card-footer';
+import CardHeader from '../components/organisms/card-header';
+import CardBody from '../components/organisms/card-body';
+import CardFooter from '../components/organisms/card-footer';
 
 export default function Home() {
   return (
