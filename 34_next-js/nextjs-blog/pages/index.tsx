@@ -112,6 +112,32 @@ const userPostCountStyle: React.CSSProperties = {
   color: 'rgba(55, 65, 81, 1)',
 };
 
+const categoryCardStyle: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: '24rem',
+  paddingLeft: '1rem',
+  paddingRight: '1rem',
+  paddingTop: '1.5rem',
+  paddingBottom: '1.5rem',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  backgroundColor: 'rgba(255, 255, 255, 1)',
+  borderRadius: '0.5rem',
+  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+};
+
+const categoryListStyle: React.CSSProperties = {
+  marginTop: '0.5rem',
+};
+
+const categoryItemStyle: React.CSSProperties = {
+  marginLeft: '0.25rem',
+  marginRight: '0.25rem',
+  fontWeight: 'bold',
+  color: 'rgba(55, 65, 81, 1)',
+};
+
 const pageElementStyle: React.CSSProperties = {
   paddingLeft: '0.75rem',
   paddingRight: '0.75rem',
@@ -216,6 +242,26 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
+                <h1 style={usersTitleStyle}>Categories</h1>
+              </div>
+              <div style={categoryCardStyle}>
+                <ul>
+                  <li>
+                    <a href="#" style={categoryItemStyle}>
+                      - AWS
+                    </a>
+                  </li>
+                  <li style={categoryListStyle}>
+                    <a href="#" style={categoryItemStyle}>
+                      - Laravel
+                    </a>
+                  </li>
+                  <li style={categoryListStyle}>
+                    <a href="#" style={categoryItemStyle}>
+                      - Vue
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
