@@ -2,6 +2,7 @@ import Header from '../components/templates/header';
 import PageHeader from '../components/organisms/page-header';
 import Card from '../components/organisms/card';
 import UserIcon from '../components/atoms/user-icon';
+import Pagination from '../components/organisms/pagination';
 
 const footerStyle: React.CSSProperties = {
   position: 'fixed',
@@ -44,14 +45,6 @@ const innerStyle2: React.CSSProperties = {
 
 const innerStyle3: React.CSSProperties = {
   width: '66.666666%',
-};
-
-const pageOuterStyle: React.CSSProperties = {
-  marginTop: '2rem',
-};
-
-const pageInnerStyle: React.CSSProperties = {
-  display: 'flex',
 };
 
 const sidebarStyle: React.CSSProperties = {
@@ -193,20 +186,6 @@ const recentPostedAtStyle: React.CSSProperties = {
   color: 'rgba(75, 85, 99, 1)',
 };
 
-const pageElementStyle: React.CSSProperties = {
-  paddingLeft: '0.75rem',
-  paddingRight: '0.75rem',
-  paddingTop: '0.5rem',
-  paddingBottom: '0.5rem',
-  marginLeft: '0.25rem',
-  marginRight: '0.25rem',
-  fontWeight: '500',
-  color: 'rgba(107, 114, 128, 1)',
-  backgroundColor: 'rgba(255, 255, 255, 1)',
-  borderRadius: '0.375rem',
-  cursor: 'not-allowed',
-};
-
 export default function Home() {
   return (
     <div>
@@ -243,25 +222,7 @@ export default function Home() {
                 imgPath=""
                 userName="AlexJohn"
               />
-              <div style={pageOuterStyle}>
-                <div style={pageInnerStyle}>
-                  <a href="#" style={pageElementStyle}>
-                    Previous
-                  </a>
-                  <a href="#" style={pageElementStyle}>
-                    1
-                  </a>
-                  <a href="#" style={pageElementStyle}>
-                    2
-                  </a>
-                  <a href="#" style={pageElementStyle}>
-                    3
-                  </a>
-                  <a href="#" style={pageElementStyle}>
-                    Next
-                  </a>
-                </div>
-              </div>
+              <Pagination pageNumbers={['1', '2', '3']} />
             </div>
             <div style={sidebarStyle}>
               <div style={usersStyle}>
