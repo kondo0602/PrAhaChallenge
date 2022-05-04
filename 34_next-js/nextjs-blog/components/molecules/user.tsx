@@ -5,6 +5,7 @@ import UserName from '../atoms/user-name';
 const style: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
+  textDecoration: 'none',
 };
 
 const User: FC<{ imgPath: string; userName: string }> = ({

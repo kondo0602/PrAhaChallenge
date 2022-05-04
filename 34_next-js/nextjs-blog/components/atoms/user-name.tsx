@@ -6,7 +6,7 @@ const style: React.CSSProperties = {
 };
 
 const UserName: FC<{ userName: string }> = ({ userName }) => {
-  return <h1 style={style}>{userName}</h1>;
+  return <h3 style={style}>{userName}</h3>;
 };
 
 export default UserName;

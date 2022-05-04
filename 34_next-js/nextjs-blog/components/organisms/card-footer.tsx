@@ -4,9 +4,9 @@ import User from '../molecules/user';
 
 const style: React.CSSProperties = {
   display: 'flex',
+  alignItems: 'center',
   marginTop: '1rem',
   justifyContent: 'space-between',
-  placeItems: 'center',
 };
 
 const CardBody: FC<{ text: string; imgPath: string; userName: string }> = ({

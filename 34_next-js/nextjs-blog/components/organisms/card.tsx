@@ -13,7 +13,9 @@ const innerStyle: React.CSSProperties = {
   paddingRight: '2.5rem',
   paddingTop: '1.5rem',
   paddingBottom: '1.5rem',
-  margin: 'auto',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  backgroundColor: 'rgba(255, 255, 255, 1)',
   borderRadius: '0.5rem',
   boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
 };

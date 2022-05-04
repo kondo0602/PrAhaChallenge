@@ -4,7 +4,7 @@ import Button from '../atoms/button';
 
 const style: React.CSSProperties = {
   display: 'flex',
-  placeItems: 'center',
+  alignItems: 'center',
   justifyContent: 'space-between',
 };
 

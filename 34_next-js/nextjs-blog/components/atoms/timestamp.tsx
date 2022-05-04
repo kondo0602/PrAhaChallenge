@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 
 const style: React.CSSProperties = {
-  font: 'light',
-  color: 'rgba(75, 85, 99)',
+  fontWeight: '300',
+  color: 'rgba(75, 85, 99, 1)',
 };
 
 const Timestamp: FC<{ timestamp: string }> = ({ timestamp }) => {
