@@ -138,6 +138,61 @@ const categoryItemStyle: React.CSSProperties = {
   color: 'rgba(55, 65, 81, 1)',
 };
 
+const postTagOuterStyle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const postTagInnerStyle: React.CSSProperties = {
+  paddingLeft: '0.5rem',
+  paddingRight: '0.5rem',
+  paddingTop: '0.25rem',
+  paddingBottom: '0.25rem',
+  fontSize: '0.875rem',
+  lineHeight: '1.25rem',
+  color: 'rgba(209, 250, 229, 1)',
+  backgroundColor: 'rgba(75, 85, 99, 1)',
+  borderRadius: '0.25rem',
+};
+
+const recentPostContentOuterStyle: React.CSSProperties = {
+  marginTop: '1rem',
+};
+
+const recentPostContentInnerStyle: React.CSSProperties = {
+  fontSize: '1.125rem',
+  lineHeight: '1.75rem',
+  fontWeight: '500',
+  color: 'rgba(55, 65, 81, 1)',
+};
+
+const recentPostAuthorOuterStyle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginTop: '1rem',
+};
+
+const recentPostAuthorInnerStyle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+};
+
+const recentPostAuthorNameStyle: React.CSSProperties = {
+  marginLeft: '0.75rem',
+  marginRight: '0.75rem',
+  fontSize: '0.75rem',
+  lineHeight: '1.25rem',
+  color: 'rgba(55, 65, 81, 1)',
+};
+
+const recentPostedAtStyle: React.CSSProperties = {
+  fontSize: '0.75rem',
+  lineHeight: '1.25rem',
+  color: 'rgba(75, 85, 99, 1)',
+};
+
 const pageElementStyle: React.CSSProperties = {
   paddingLeft: '0.75rem',
   paddingRight: '0.75rem',
@@ -244,24 +299,50 @@ export default function Home() {
                 </div>
                 <h1 style={usersTitleStyle}>Categories</h1>
               </div>
-              <div style={categoryCardStyle}>
-                <ul>
-                  <li>
-                    <a href="#" style={categoryItemStyle}>
-                      - AWS
+              <div style={usersStyle}>
+                <div style={categoryCardStyle}>
+                  <ul>
+                    <li>
+                      <a href="#" style={categoryItemStyle}>
+                        - AWS
+                      </a>
+                    </li>
+                    <li style={categoryListStyle}>
+                      <a href="#" style={categoryItemStyle}>
+                        - Laravel
+                      </a>
+                    </li>
+                    <li style={categoryListStyle}>
+                      <a href="#" style={categoryItemStyle}>
+                        - Vue
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div style={usersStyle}>
+                <h1 style={usersTitleStyle}>Recent Post</h1>
+                <div style={categoryCardStyle}>
+                  <div style={postTagOuterStyle}>
+                    <a href="#" style={postTagInnerStyle}>
+                      Laravel
                     </a>
-                  </li>
-                  <li style={categoryListStyle}>
-                    <a href="#" style={categoryItemStyle}>
-                      - Laravel
+                  </div>
+                  <div style={recentPostContentOuterStyle}>
+                    <a href="#" style={recentPostContentInnerStyle}>
+                      Build Your New Idea with Laravel Freamwork.
                     </a>
-                  </li>
-                  <li style={categoryListStyle}>
-                    <a href="#" style={categoryItemStyle}>
-                      - Vue
-                    </a>
-                  </li>
-                </ul>
+                  </div>
+                  <div style={recentPostAuthorOuterStyle}>
+                    <div style={recentPostAuthorInnerStyle}>
+                      <UserIcon imgPath="" />
+                      <a href="#" style={recentPostAuthorNameStyle}>
+                        Alex John
+                      </a>
+                    </div>
+                    <span style={recentPostedAtStyle}>Jun 1, 2020</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
