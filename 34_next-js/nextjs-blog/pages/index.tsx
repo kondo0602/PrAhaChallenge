@@ -190,7 +190,10 @@ export default function Home() {
   return (
     <div>
       <div style={outerStyle}>
-        <Header />
+        <Header
+          headerLeft="Brand"
+          headerRightItems={['Home', 'Blog', 'About us']}
+        />
         <div style={innerStyle1}>
           <div style={innerStyle2}>
             <div style={innerStyle3}>
