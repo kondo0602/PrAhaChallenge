@@ -1,8 +1,10 @@
 import Header from '../components/templates/header';
 import PageHeader from '../components/organisms/page-header';
 import Card from '../components/organisms/card';
-import UserIcon from '../components/atoms/user-icon';
 import Pagination from '../components/organisms/pagination';
+import Authors from '../components/organisms/authors';
+import Categories from '../components/organisms/categories';
+import RecentPost from '../components/organisms/recent-post';
 
 const footerStyle: React.CSSProperties = {
   position: 'fixed',
@@ -53,139 +55,6 @@ const sidebarStyle: React.CSSProperties = {
   marginRight: '-2rem',
 };
 
-const usersStyle: React.CSSProperties = {
-  paddingLeft: '2rem',
-  paddingRight: '2rem',
-};
-
-const usersTitleStyle: React.CSSProperties = {
-  marginBottom: '1rem',
-  fontSize: '1.25rem',
-  lineHeight: '1.75rem',
-  fontWeight: '700',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const userCardStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  maxWidth: '24rem',
-  paddingLeft: '1.5rem',
-  paddingRight: '1.5rem',
-  paddingTop: '1rem',
-  paddingBottom: '1rem',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  backgroundColor: 'rgba(255, 255, 255, 1)',
-  borderRadius: '0.5rem',
-  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-};
-
-const userCardContentStyle: React.CSSProperties = {
-  marginLeft: '-1rem',
-  marginRight: '-1rem',
-};
-
-const userCardItemStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-};
-
-const userCardNameStyle: React.CSSProperties = {
-  marginLeft: '0.25rem',
-  marginRight: '0.25rem',
-  fontWeight: '700',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const userPostCountStyle: React.CSSProperties = {
-  fontSize: '0.875rem',
-  lineHeight: '1.25rem',
-  fontWeight: '300',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const categoryCardStyle: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  maxWidth: '24rem',
-  paddingLeft: '1rem',
-  paddingRight: '1rem',
-  paddingTop: '1.5rem',
-  paddingBottom: '1.5rem',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  backgroundColor: 'rgba(255, 255, 255, 1)',
-  borderRadius: '0.5rem',
-  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-};
-
-const categoryListStyle: React.CSSProperties = {
-  marginTop: '0.5rem',
-};
-
-const categoryItemStyle: React.CSSProperties = {
-  marginLeft: '0.25rem',
-  marginRight: '0.25rem',
-  fontWeight: 'bold',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const postTagOuterStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-};
-
-const postTagInnerStyle: React.CSSProperties = {
-  paddingLeft: '0.5rem',
-  paddingRight: '0.5rem',
-  paddingTop: '0.25rem',
-  paddingBottom: '0.25rem',
-  fontSize: '0.875rem',
-  lineHeight: '1.25rem',
-  color: 'rgba(209, 250, 229, 1)',
-  backgroundColor: 'rgba(75, 85, 99, 1)',
-  borderRadius: '0.25rem',
-};
-
-const recentPostContentOuterStyle: React.CSSProperties = {
-  marginTop: '1rem',
-};
-
-const recentPostContentInnerStyle: React.CSSProperties = {
-  fontSize: '1.125rem',
-  lineHeight: '1.75rem',
-  fontWeight: '500',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const recentPostAuthorOuterStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginTop: '1rem',
-};
-
-const recentPostAuthorInnerStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-};
-
-const recentPostAuthorNameStyle: React.CSSProperties = {
-  marginLeft: '0.75rem',
-  marginRight: '0.75rem',
-  fontSize: '0.75rem',
-  lineHeight: '1.25rem',
-  color: 'rgba(55, 65, 81, 1)',
-};
-
-const recentPostedAtStyle: React.CSSProperties = {
-  fontSize: '0.75rem',
-  lineHeight: '1.25rem',
-  color: 'rgba(75, 85, 99, 1)',
-};
-
 export default function Home() {
   return (
     <div>
@@ -228,86 +97,31 @@ export default function Home() {
               <Pagination pageNumbers={['1', '2', '3']} />
             </div>
             <div style={sidebarStyle}>
-              <div style={usersStyle}>
-                <h1 style={usersTitleStyle}>Authors</h1>
-                <div style={userCardStyle}>
-                  <ul style={userCardContentStyle}>
-                    <li style={userCardItemStyle}>
-                      <UserIcon imgPath="" />
-                      <p>
-                        <a href="#" style={userCardNameStyle}>
-                          Alex John
-                        </a>
-                        <span style={userPostCountStyle}>Created 23 Posts</span>
-                      </p>
-                    </li>
-                    <li style={userCardItemStyle}>
-                      <UserIcon imgPath="" />
-                      <p>
-                        <a href="#" style={userCardNameStyle}>
-                          Alex John
-                        </a>
-                        <span style={userPostCountStyle}>Created 23 Posts</span>
-                      </p>
-                    </li>
-                    <li style={userCardItemStyle}>
-                      <UserIcon imgPath="" />
-                      <p>
-                        <a href="#" style={userCardNameStyle}>
-                          Alex John
-                        </a>
-                        <span style={userPostCountStyle}>Created 23 Posts</span>
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-                <h1 style={usersTitleStyle}>Categories</h1>
-              </div>
-              <div style={usersStyle}>
-                <div style={categoryCardStyle}>
-                  <ul>
-                    <li>
-                      <a href="#" style={categoryItemStyle}>
-                        - AWS
-                      </a>
-                    </li>
-                    <li style={categoryListStyle}>
-                      <a href="#" style={categoryItemStyle}>
-                        - Laravel
-                      </a>
-                    </li>
-                    <li style={categoryListStyle}>
-                      <a href="#" style={categoryItemStyle}>
-                        - Vue
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div style={usersStyle}>
-                <h1 style={usersTitleStyle}>Recent Post</h1>
-                <div style={categoryCardStyle}>
-                  <div style={postTagOuterStyle}>
-                    <a href="#" style={postTagInnerStyle}>
-                      Laravel
-                    </a>
-                  </div>
-                  <div style={recentPostContentOuterStyle}>
-                    <a href="#" style={recentPostContentInnerStyle}>
-                      Build Your New Idea with Laravel Freamwork.
-                    </a>
-                  </div>
-                  <div style={recentPostAuthorOuterStyle}>
-                    <div style={recentPostAuthorInnerStyle}>
-                      <UserIcon imgPath="" />
-                      <a href="#" style={recentPostAuthorNameStyle}>
-                        Alex John
-                      </a>
-                    </div>
-                    <span style={recentPostedAtStyle}>Jun 1, 2020</span>
-                  </div>
-                </div>
-              </div>
+              <Authors
+                cardTitle="Authors"
+                imgPath=""
+                authorName="Alex John"
+                authorPostCount={23}
+              />
+              <Categories
+                cardTitle="Categories"
+                categoryItems={[
+                  'AWS',
+                  'Laravel',
+                  'Vue',
+                  'Design',
+                  'Django',
+                  'PHP',
+                ]}
+              />
+              <RecentPost
+                cardTitle="Recent Post"
+                recentPostTag="Laravel"
+                recentPostContent="Build Your New Idea with Laravel Freamwork."
+                imgPath=""
+                recentPostAuthorName="Alex John"
+                recentPostPostedAt="Jun 1, 2020"
+              />
             </div>
           </div>
         </div>
