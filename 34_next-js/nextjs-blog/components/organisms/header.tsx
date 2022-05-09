@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import HeaderLeft from '../atoms/header-left';
+import HeaderRightIcon from '../molecules/header-right-icon';
 import HeaderRight from '../molecules/header-right';
 
 const navStyle: React.CSSProperties = {
@@ -29,6 +30,7 @@ const Header: FC<{ headerLeft: string; headerRightItems: string[] }> = ({
     <nav style={navStyle}>
       <div style={style}>
         <HeaderLeft text={headerLeft} />
+        <HeaderRightIcon />
         <HeaderRight headerRightItems={headerRightItems} />
       </div>
     </nav>
