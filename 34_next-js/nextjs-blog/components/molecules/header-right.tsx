@@ -1,18 +1,25 @@
 import React, { FC } from 'react';
+import { css } from '@emotion/react';
 import HeaderItem from '../atoms/header-item';
 
-const style: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'row',
-  marginLeft: '-1rem',
-  marginRight: '-1rem',
+const styles = {
+  headerRight: css`
+    flex-direction: column;
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+  `,
 };
 
 const HeaderRight: FC<{ headerRightItems: string[] }> = ({
   headerRightItems,
 }) => {
   return (
-    <div style={style}>
+    <div css={styles.headerRight}>
       {headerRightItems.map((h) => {
         return <HeaderItem text={h} />;
       })}

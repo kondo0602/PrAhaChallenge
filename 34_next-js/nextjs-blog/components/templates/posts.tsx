@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { css } from '@emotion/react';
 import Header from '../organisms/header';
 import PageHeader from '../organisms/page-header';
 import Card from '../organisms/card';
@@ -46,8 +47,22 @@ const innerStyle2: React.CSSProperties = {
   marginRight: 'auto',
 };
 
-const innerStyle3: React.CSSProperties = {
-  width: '66.666666%',
+const styles = {
+  inner3: css`
+    width: 100%;
+    @media (min-width: 1024px) {
+      width: 66.666666%;
+    }
+  `,
+  sideBar: css`
+    display: none;
+    width: 33.333333%;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  `,
 };
 
 const sidebarStyle: React.CSSProperties = {
@@ -87,7 +102,7 @@ const Posts: FC<{
         />
         <div style={innerStyle1}>
           <div style={innerStyle2}>
-            <div style={innerStyle3}>
+            <div css={styles.inner3}>
               <PageHeader text={props.pageTitle} />
               <Card
                 timestamp={props.timestamp}
@@ -118,7 +133,7 @@ const Posts: FC<{
               />
               <Pagination pageNumbers={props.pageNumbers} />
             </div>
-            <div style={sidebarStyle}>
+            <div css={styles.sideBar}>
               <Authors
                 cardTitle="Authors"
                 imgPath={props.authorImgPath}
