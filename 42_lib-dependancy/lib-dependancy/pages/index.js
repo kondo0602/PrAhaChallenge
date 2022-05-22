@@ -1,9 +1,9 @@
-import FormPresentational from "../components/form-presentational";
+import FormContainer from "../components/form-container";
 
 export default function Home() {
   return (
     <div>
-      <FormPresentational />
+      <FormContainer />
     </div>
   );
 }

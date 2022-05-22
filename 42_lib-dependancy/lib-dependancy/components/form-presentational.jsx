@@ -1,45 +1,39 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import FormContainer from "./form-container";
 
-export default function FormPresentational() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  console.log(errors);
-
-  const registerFirstName = {
-    ...register("First name", { required: true, maxLength: 80 }),
-  };
-  const registerLastName = {
-    ...register("Last name", { required: true, maxLength: 100 }),
-  };
-  const registerEmail = {
-    ...register("Email", { required: true, pattern: /^\S+@\S+$/i }),
-  };
-  const registerMobileNumber = {
-    ...register("Mobile number", {
-      required: true,
-      minLength: 6,
-      maxLength: 12,
-    }),
-  };
-  const registerTitle = { ...register("Title", { required: true }) };
-  const registerDeveloper = { ...register("Developer", { required: true }) };
+const FormPresentational = (props) => {
+  const onSubmit = (data) => console.log(data);
 
   return (
     <div>
-      <FormContainer
-        handleSubmit={handleSubmit}
-        registerFirstName={registerFirstName}
-        registerLastName={registerLastName}
-        registerEmail={registerEmail}
-        registerMobileNumber={registerMobileNumber}
-        registerTitle={registerTitle}
-        registerDeveloper={registerDeveloper}
-      />
+      <form onSubmit={props.handleSubmit(onSubmit)}>
+        <input
+          type="text"
+          placeholder="First name"
+          {...props.registerFirstName}
+        />
+        <input
+          type="text"
+          placeholder="Last name"
+          {...props.registerLastName}
+        />
+        <input type="text" placeholder="Email" {...props.registerEmail} />
+        <input
+          type="text"
+          placeholder="Mobile number"
+          {...props.registerMobileNumber}
+        />
+        <select {...props.registerTitle}>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+          <option value="Dr">Dr</option>
+        </select>
+        <input type="radio" value="Yes" {...props.registerDeveloper} />
+        <input type="radio" value="No" {...props.registerDeveloper} />
+        <input type="submit" />
+      </form>
     </div>
   );
-}
+};
+
+export default FormPresentational;
